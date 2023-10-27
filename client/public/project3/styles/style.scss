@@ -1,0 +1,212 @@
+$themecolor: rgba(152, 57, 255, 0.5);
+$goodusecolor: rgba(54, 212, 138, 0.8);
+$goodusecolor2: rgba(54, 212, 138, 0.3);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  font-size: 16px;
+}
+
+body {
+  overflow-x: hidden;
+  nav {
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    ul {
+      display: flex;
+      li {
+        list-style-type: none;
+        margin: 1rem;
+        a {
+          color: black;
+          text-decoration: none;
+          transition: all 0.1s ease;
+          &:hover {
+            color: $goodusecolor;
+          }
+        }
+      }
+    }
+  }
+  div.footer {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    left: 0;
+    font-size: 1.25rem;
+    height: 30px;
+    width: 100vw;
+    background-color: rgb(228, 255, 226);
+    z-index: 5;
+  }
+  section.main-area {
+    background-color: white;
+    min-height: 70vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    div.info {
+      //border: 2px solid red;
+      flex-basis: 450px;
+      padding: 1rem;
+      h1 {
+        font-size: 3.5rem;
+      }
+      h2 {
+        font-size: 1rem;
+      }
+      a {
+        color: white;
+        background-color: $goodusecolor;
+        padding: 0.25rem 0.5rem;
+        font-size: 1.25rem;
+        border-radius: 20px;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 2rem;
+        transition: all 0.2s ease;
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
+    div.imag-area {
+      //border: 2px solid black;
+      flex-basis: 450px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  section.about-me {
+    background-color: rgb(231, 255, 233);
+    padding: 5rem 0rem;
+    display: flex;
+    justify-content: center;
+    section.description {
+      width: 50%;
+      text-align: center;
+      h2 {
+        font-size: 2rem;
+      }
+      .progressbar-area {
+        p {
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+  section.resume {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem;
+    align-items: center;
+    section.table {
+      flex: 5 0 500px;
+      padding: 2rem;
+      table {
+        --bs-table-bg: none;
+        border-collapse: collapse;
+        tr {
+          border-bottom: 2px solid gray;
+          transition: all 0.2s ease;
+          &:hover {
+            background-color: $goodusecolor2;
+          }
+          td {
+            padding: 1rem;
+          }
+        }
+      }
+    }
+    section.picture {
+      flex: 1 1 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      img {
+        width: 90%;
+      }
+      div.green-rect {
+        width: 30vw;
+        height: 90vh;
+        border: 10px solid rgb(195, 255, 200);
+        position: absolute;
+        top: 30px;
+        left: 80px;
+        z-index: -2;
+      }
+      div.green-rect2 {
+        width: 50vw;
+        height: 40vh;
+        border: 10px solid rgb(195, 255, 200);
+        position: absolute;
+        top: 300px;
+        left: -300px;
+        z-index: -2;
+      }
+      div.green-rect3 {
+        width: 50vw;
+        height: 40vh;
+        border: 10px solid rgb(195, 255, 200);
+        position: absolute;
+        top: 0px;
+        left: -100px;
+        z-index: -2;
+      }
+    }
+  }
+}
+
+.effect1 {
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 10px 6px -6px #777;
+}
+
+@media screen and (max-width: 500px) {
+  nav {
+    ul {
+      flex-direction: column;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  section.about-me {
+    section.description {
+      width: 80%;
+    }
+  }
+  section.resume {
+    overflow-x: auto;
+    section.picture {
+      div.green-rect {
+        display: none;
+      }
+      div.green-rect2 {
+        display: none;
+      }
+      div.green-rect3 {
+        display: none;
+      }
+    }
+  }
+}
